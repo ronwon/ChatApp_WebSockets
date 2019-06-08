@@ -1,0 +1,76 @@
+
+// make connection
+var socket = io.connect('http://192.168.43.140:4000');//http://192.168.43.140
+var name;
+
+var btn = document.getElementById('bttn');
+var inp = document.getElementById('username');
+var onlineUserArea = document.getElementById('users');
+var msgArea = document.getElementById('messageArea');
+var userFormArea = document.getElementById('userFormArea');
+var msgBtn = document.getElementById('msgBtn');
+var msgInput = document.getElementById('msgInput');
+var chatArea = document.getElementById('chat');
+
+
+btn.addEventListener('click', function() {
+    event.preventDefault();
+    name = inp.value;
+    socket.emit('newUser', {name:inp.value});
+    userFormArea.style.display = 'none';
+    msgArea.style.display = 'block';
+    console.log("You entered:",inp.value);
+    
+});
+
+var timeout = undefined;
+msgBtn.addEventListener('click', function() {
+    event.preventDefault();
+    clearTimeout(timeout);
+    typing = false;
+    socket.emit('newMsg', msgInput.value);
+    msgInput.value = '';
+    socket.emit('typing', false);
+});
+
+// HANDLE KEYPRESS EVENT
+var typing = false;
+
+var timeoutFunc = function() {
+    typing = false;
+    clearTimeout(timeout);
+    socket.emit('typing', false);
+}
+msgInput.addEventListener('keydown', function() {
+    if(typing == false) {
+        typing = true;
+        socket.emit('typing', true);
+        timeout = setTimeout(timeoutFunc, 2500);
+    }
+    else {
+        clearTimeout(timeout);
+        timeout = setTimeout(timeoutFunc, 2500);
+    }
+    
+});
+
+socket.on('usersUpdate', function(data) {
+    let s = '';
+    for(let i=0; i<data.length; i++) {
+        s += '<li>' + data[i] + '</li>';
+    }
+    onlineUserArea.innerHTML = s;
+});
+
+socket.on('RecOtherMsg', function(data) {
+    let s = '';
+    s = '<p class="grey-text text-darken-3 lighten-3" id="chatBox"><strong>' + data.name + ': </strong>' + data.msg + '</p>';
+    chatArea.innerHTML += s;
+});
+
+// HANDLE TYPING RECEIPT
+// socket.on('typing', function(data) {
+//     console.log(data, 'is typing');
+    
+// });
+

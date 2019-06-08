@@ -1,0 +1,34 @@
+#head {
+    color: #0a3d62;
+}
+#messageArea {
+    display: none;
+}
+#online {
+    color: white;
+    background: #00695C;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+#chatBox {
+    margin: 5px;
+}
+
+#chat {
+    margin-top: 30px;
+}
+
+#fback {
+    color: yellow;
+}
+
+#messageForm {
+    margin-top: 30px;
+}
+
+h5 {
+    color: rgb(255, 255, 255);
+    font-weight: 900;
+}
