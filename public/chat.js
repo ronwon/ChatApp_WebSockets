@@ -69,8 +69,23 @@ socket.on('RecOtherMsg', function(data) {
 });
 
 // HANDLE TYPING RECEIPT
-// socket.on('typing', function(data) {
-//     console.log(data, 'is typing');
-    
-// });
+socket.on('typing', function(data) {
+    console.log(data, 'is typing');
+});
 
+if(data.length == 1 && data[0]==name) {
+    s = '';
+}
+else if(data.length > 0) {
+    s += '<p class="grey-text text-darken-3 lighten-3"><em>';
+    for(let i=0; i<data.length; i++) {
+        if(data[i] != name) {
+            s += data[i];
+            if(i != data.length-1) {
+                s += ', ';
+            }
+        }
+    }
+    s += ' is typing</em></p>';
+}
+feedback.innerHTML = s;
