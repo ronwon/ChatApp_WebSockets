@@ -16,11 +16,15 @@ var feedback = document.getElementById('feedback');
 btn.addEventListener('click', function() {
     event.preventDefault();
     name = inp.value;
+    if(name == '' || name == null) {
+        alert('Enter a valid USERNAME');
+    }
+    else {
         socket.emit('newUser', {name:inp.value});
         userFormArea.style.display = 'none';
         msgArea.style.display = 'block';
         console.log("You entered:",inp.value);
-    
+    }
     
 });
 
