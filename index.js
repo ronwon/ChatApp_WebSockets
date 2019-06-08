@@ -3,11 +3,15 @@ var express = require('express');
 var socket = require('socket.io');
 app = express();
 
-var server = app.listen(4000, function() {
-    console.log('Listening on port 4000\n');
+var server = app.listen(5000, function() {
+    console.log('Listening on port 5000\n');
 });
 
-app.use(express.static('public'));
+app.use(express.static(__dirname+'/public'));
+
+app.get('/', function(req, res) {
+    res.render(__dirname+'/public/index.html');
+});
 
 var users = [];
 var typingUsers = [];

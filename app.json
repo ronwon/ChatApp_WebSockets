@@ -1,0 +1,6 @@
+{
+    "name": "My chat application",
+    "description": "My chat application",
+    "repository": "https://github.com/ronwon/ChatApp_WebSockets.git",
+    "logo": "https://chat-m.herokuapp.com/node.svg"
+}
