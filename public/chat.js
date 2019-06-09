@@ -1,6 +1,7 @@
 
 // make connection
-var socket = io.connect('https://chat-mm.herokuapp.com:5000');//http://192.168.43.140
+// var socket = io.connect('https://chat-mm.herokuapp.com:5000');//http://192.168.43.140
+var socket = io();
 var name;
 
 var btn = document.getElementById('bttn');
