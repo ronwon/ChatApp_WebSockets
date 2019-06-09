@@ -8,6 +8,9 @@
   },
   "author": "me",
   "license": "ISC",
+  "engines": {
+    "node": "10.15.3"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "socket.io": "^2.2.0"
