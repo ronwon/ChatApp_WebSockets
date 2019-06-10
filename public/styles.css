@@ -34,19 +34,19 @@ h5 {
 }
 
 .msssg-color {
-    background-color: #004D40;
-}
-
-.msssg-color-me {
     background-color: #E0E0E0;
 }
 
+.msssg-color-me {
+    background-color: #004D40;
+}
+
 .texxt-color {
-    color: white;
+    color: black;
 }
 
 .texxt-color-me {
-    color: black;
+    color: white;
 }
 
 .msssg {
