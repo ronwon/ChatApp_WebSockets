@@ -70,7 +70,8 @@ socket.on('usersUpdate', function(data) {
 
 socket.on('RecOtherMsg', function(data) {
     let ss = '';
-    ss = '<div class="roww"><div class="col1"></div><div class="col2"><div class="msssg"><p class="texxt">'+data.msg+'</p></div></div></div>';
+    
+    ss = '<div class="roww"><div class="col1"></div><div class="col2"><div class="msssg msssg-color msssg-align-right"><p class="texxt texxt-color">'+data.msg+'</p></div></div></div>';
     // s = '<p class="grey-text text-darken-3 lighten-3" id="chatBox"><strong>' + data.name + ': </strong>' + data.msg + '</p>';
     chatArea.innerHTML += ss;
 });

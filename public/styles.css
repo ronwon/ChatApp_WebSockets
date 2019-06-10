@@ -33,18 +33,42 @@ h5 {
     font-weight: 900;
 }
 
+.msssg-color {
+    background-color: #004D40;
+}
+
+.msssg-color-me {
+    background-color: #E0E0E0;
+}
+
+.texxt-color {
+    color: white;
+}
+
+.texxt-color-me {
+    color: black;
+}
+
 .msssg {
     display: inline-flex;
     /* justify-content: flex-end; */
-    float: right;
+    /* float: right; */
     /* text-align: right; */
-    background-color: #004D40;
+    /* background-color: #004D40; */
     border-radius: 24px;
+}
+
+.msssg-align-right {
+  float: right;
+}
+
+.msssg-align-left {
+  float: left;
 }
 
 .texxt {
     line-height: 19px;
-    color: white;
+    /* color: white; */
     margin: 0;
     padding: 10px 19px;
     /* font-size: 1.4em; */
@@ -58,7 +82,7 @@ h5 {
 .col1 {
   flex: 1; /* additionally, equal width */
   
-  padding: 0.8em;
+  padding: 0.67em;
   
 }
 
@@ -66,7 +90,7 @@ h5 {
 
   flex: 9; /* additionally, equal width */
   -ms-flex-align: end;
-  padding: 0.8em;
+  padding: 0.67em;
   /* border: solid; */
 }
 
