@@ -23,7 +23,7 @@ function init() {
         main.style.display = 'block';
         // main.style.opacity = 1;
         setTimeout(() => main.style.opacity=1, 20);
-    }, 2000);
+    }, 2500);
 }
 
 init();
