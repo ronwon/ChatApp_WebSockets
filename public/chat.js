@@ -13,6 +13,20 @@ var msgBtn = document.getElementById('msgBtn');
 var msgInput = document.getElementById('msgInput');
 var chatArea = document.getElementById('chat');
 var feedback = document.getElementById('feedback');
+var loader = document.querySelector('.loader');
+var main = document.querySelector('.container');
+
+function init() {
+    setTimeout(() => {
+        loader.style.display = 'none';
+        loader.style.opacity = 0;
+        main.style.display = 'block';
+        // main.style.opacity = 1;
+        setTimeout(() => main.style.opacity=1, 20);
+    }, 2000);
+}
+
+init();
 
 btn.addEventListener('click', function() {
     event.preventDefault();
