@@ -14,6 +14,7 @@ var msgInput = document.getElementById('msgInput');
 var chatArea = document.getElementById('chat');
 var feedback = document.getElementById('feedback');
 var loader = document.querySelector('.loader');
+// var progress = document.querySelector('.progress');
 var main = document.querySelector('.container');
 
 function init() {
